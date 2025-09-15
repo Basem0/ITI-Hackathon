@@ -1,0 +1,870 @@
+﻿@model IEnumerable<ITI_Hackathon.ServiceContracts.DTO.DoctorPendingDTO>
+@{
+    ViewData["Title"] = "Pending Doctors";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="page-body p-4">
+    <!-- Header Section -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1 text-gradient-primary">
+                <i class="bi bi-person-check me-2"></i>Pending Doctors
+            </h3>
+            <p class="text-muted mb-0">Review and approve doctor registrations</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+            <div class="input-group shadow-sm rounded" style="width: 300px;">
+                <input type="text" id="searchInput" class="form-control border-end-0" placeholder="Search doctors..." />
+                <button type="button" class="btn btn-outline-primary border-start-0">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card stat-card bg-info bg-opacity-10 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1">Total Pending</h6>
+                            <h4 class="mb-0 text-dark fw-bold">@Model.Count()</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-person-clock text-info fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card bg-warning bg-opacity-10 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1">Specialties</h6>
+                            <h4 class="mb-0 text-dark fw-bold">@Model.Select(d => d.Specialty).Distinct().Count()</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-collection text-warning fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card bg-success bg-opacity-10 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1">With Bio</h6>
+                            <h4 class="mb-0 text-dark fw-bold">@Model.Count(d => !string.IsNullOrEmpty(d.Bio))</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-file-text text-success fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card bg-primary bg-opacity-10 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h6 class="text-muted mb-1">This Month</h6>
+                            <h4 class="mb-0 text-dark fw-bold">@Model.Count()</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-calendar text-primary fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>@TempData["Success"]
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm d-flex align-items-center" role="alert">
+            <i class="bi bi-exclamation-circle-fill me-2"></i>@TempData["Error"]
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- View Toggle -->
+    <div class="d-flex justify-content-end mb-3">
+        <div class="btn-group shadow-sm modern-toggle" role="group">
+            <button type="button" id="gridViewBtn" class="btn btn-outline-primary active">
+                <i class="bi bi-grid-3x3-gap"></i> Grid
+            </button>
+            <button type="button" id="listViewBtn" class="btn btn-outline-primary">
+                <i class="bi bi-list-ul"></i> List
+            </button>
+        </div>
+    </div>
+
+    <!-- Grid View -->
+    <div id="gridView">
+        @if (Model.Any())
+        {
+            <div class="row g-4" id="doctorsContainer">
+                @foreach (var doctor in Model)
+                {
+                    <div class="col-xl-4 col-lg-6 col-md-6 doctor-card-wrapper"
+                         data-name="@doctor.FullName.ToLower()"
+                         data-specialty="@doctor.Specialty.ToLower()"
+                         data-email="@doctor.Email.ToLower()">
+                        <div class="card doctor-card shadow-sm h-100 border-0">
+                            <!-- Card Header -->
+                            <div class="card-header bg-gradient-light border-0 pb-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="doctor-avatar">
+                                            <img src="~/assets/images/user/avatar-1.jpg"
+                                                 alt="@doctor.FullName"
+                                                 class="rounded-circle">
+                                            <div class="status-indicator bg-warning"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="mb-1 fw-bold text-dark">@doctor.FullName</h5>
+                                        <p class="text-muted mb-0">
+                                            <i class="bi bi-patch-check-fill me-1"></i>@doctor.Specialty
+                                        </p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-warning text-dark">Pending</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="bio-section mb-3">
+                                    <label class="form-label fw-semibold text-dark mb-1">Biography</label>
+                                    <p class="text-muted bio-text">
+                                        @(string.IsNullOrEmpty(doctor.Bio) ? "No biography provided by the doctor." : doctor.Bio)
+                                    </p>
+                                </div>
+
+                                <div class="contact-info">
+                                    <div class="info-item d-flex align-items-center mb-2">
+                                        <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                        <span class="text-muted small text-truncate">@doctor.Email</span>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center">
+                                        <i class="bi bi-calendar-fill text-success me-2"></i>
+                                        <span class="text-muted small">Applied recently</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="card-footer bg-transparent border-0 pt-0">
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-outline-primary flex-fill btn-action"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#viewDoctor-@doctor.UserId">
+                                        <i class="bi bi-eye me-1"></i> View Details
+                                    </button>
+                                    <div class="btn-group flex-fill" role="group">
+                                        <button type="button" class="btn btn-outline-danger btn-action"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#rejectDoctor-@doctor.UserId">
+                                            <i class="bi bi-x-circle me-1"></i> Reject
+                                        </button>
+                                        <button type="button" class="btn btn-outline-success btn-action"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#approveDoctor-@doctor.UserId">
+                                            <i class="bi bi-check-circle me-1"></i> Approve
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="bi bi-person-check text-muted" style="font-size: 4rem;"></i>
+                <h4 class="text-muted mt-3">No pending doctors</h4>
+                <p class="text-muted">All doctor applications have been processed.</p>
+            </div>
+        }
+    </div>
+
+    <!-- List View -->
+    <div id="listView" class="d-none">
+        @if (Model.Any())
+        {
+            <div class="card shadow-sm border-0 modern-card">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" class="ps-4 text-dark fw-bold">Doctor</th>
+                                    <th scope="col" class="text-dark fw-bold">Specialty</th>
+                                    <th scope="col" class="text-dark fw-bold">Email</th>
+                                    <th scope="col" class="text-dark fw-bold">Status</th>
+                                    <th scope="col" class="text-end pe-4 text-dark fw-bold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var doctor in Model)
+                                {
+                                    <tr class="doctor-row"
+                                        data-name="@doctor.FullName.ToLower()"
+                                        data-specialty="@doctor.Specialty.ToLower()"
+                                        data-email="@doctor.Email.ToLower()">
+                                        <td class="ps-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="~/assets/images/user/avatar-1.jpg"
+                                                     class="rounded-circle me-3"
+                                                     width="50" height="50"
+                                                     alt="@doctor.FullName">
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold text-dark">@doctor.FullName</h6>
+                                                    <small class="text-muted">
+                                                        @(string.IsNullOrEmpty(doctor.Bio) ? "No bio provided" :
+                                                                                                        (doctor.Bio.Length > 40 ? doctor.Bio.Substring(0, 40) + "..." : doctor.Bio))
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-dark border">@doctor.Specialty</span>
+                                </td>
+                                <td class="text-muted">@doctor.Email</td>
+                                <td>
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                </td>
+                                <td class="text-end pe-4">
+                                    <div class="btn-group action-buttons" role="group">
+                                        <button class="btn btn-sm btn-outline-primary btn-action"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#viewDoctor-@doctor.UserId"
+                                                title="View Details">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger btn-action"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#rejectDoctor-@doctor.UserId"
+                                                title="Reject">
+                                            <i class="bi bi-x-circle"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success btn-action"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#approveDoctor-@doctor.UserId"
+                                                title="Approve">
+                                            <i class="bi bi-check-circle"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                                                        }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="bi bi-person-check text-muted" style="font-size: 4rem;"></i>
+                <h4 class="text-muted mt-3">No pending doctors</h4>
+                <p class="text-muted">All doctor applications have been processed.</p>
+            </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    @if (Model.Any())
+    {
+        <nav aria-label="Doctor pagination" class="mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="text-muted">
+                    Showing <strong>1-@Model.Count()</strong> of <strong>@Model.Count()</strong> pending doctors
+                </div>
+                <ul class="pagination modern-pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="bi bi-three-dots"></i></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
+</div>
+
+<!-- Modals Section - Placed outside both grid and list views -->
+@foreach (var doctor in Model)
+{
+    <!-- View Details Modal -->
+    <div class="modal fade" id="viewDoctor-@doctor.UserId" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modern-modal border-0 shadow-lg">
+                <div class="modal-header bg-gradient-primary text-white">
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-person-badge me-2"></i>Doctor Details
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <img src="~/assets/images/user/avatar-1.jpg"
+                                 alt="@doctor.FullName"
+                                 class="rounded-circle mb-3 shadow-sm"
+                                 style="width: 120px; height: 120px; object-fit: cover;">
+                            <h4 class="fw-bold text-primary">@doctor.FullName</h4>
+                            <span class="badge bg-primary">@doctor.Specialty</span>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="info-section">
+                                <h6 class="fw-bold text-dark mb-3">Contact Information</h6>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="info-card border rounded p-3">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                                <div>
+                                                    <small class="text-muted">Email</small>
+                                                    <div class="fw-semibold text-dark">@doctor.Email</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-section mt-4">
+                                <h6 class="fw-bold text-dark mb-3">Biography</h6>
+                                <div class="border rounded p-3 bg-light">
+                                    <p class="text-muted mb-0">
+                                        @(string.IsNullOrEmpty(doctor.Bio) ? "No biography provided by the doctor." : doctor.Bio)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#rejectDoctor-@doctor.UserId"
+                            data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-1"></i> Reject
+                    </button>
+                    <button type="button" class="btn btn-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#approveDoctor-@doctor.UserId"
+                            data-bs-dismiss="modal">
+                        <i class="bi bi-check-circle me-1"></i> Approve
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div class="modal fade" id="approveDoctor-@doctor.UserId" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modern-modal border-0 shadow-lg">
+                <div class="modal-header bg-gradient-success text-white">
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-check-circle me-2"></i>Approve Doctor
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="text-dark">Approve Doctor Registration?</h5>
+                    <p class="text-muted">
+                        You are about to approve <strong>@doctor.FullName</strong> as a registered doctor.
+                        They will gain access to the system and can start accepting patients.
+                    </p>
+
+                    <form asp-action="ApproveDoctor" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="UserId" value="@doctor.UserId" />
+                        <div class="d-flex gap-2 justify-content-center mt-4">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle me-1"></i> Approve Doctor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Modal -->
+    <div class="modal fade" id="rejectDoctor-@doctor.UserId" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modern-modal border-0 shadow-lg">
+                <div class="modal-header bg-gradient-danger text-white">
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-x-circle me-2"></i>Reject Doctor
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="text-dark">Reject Doctor Application?</h5>
+                    <p class="text-muted">
+                        You are about to reject <strong>@doctor.FullName</strong>'s application.
+                        This action cannot be undone and they will be notified of the rejection.
+                    </p>
+
+                    <form asp-action="RejectDoctor" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="UserId" value="@doctor.UserId" />
+                        <div class="d-flex gap-2 justify-content-center mt-4">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-x-circle me-1"></i> Reject Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Auto close alerts after 5 seconds
+        setTimeout(() => {
+            document.querySelectorAll('.alert').forEach(alert => {
+                const bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 5000);
+
+        // View toggle functionality
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const gridView = document.getElementById('gridView');
+        const listView = document.getElementById('listView');
+
+        gridViewBtn.addEventListener('click', function() {
+            gridView.classList.remove('d-none');
+            listView.classList.add('d-none');
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+
+            // Save preference to localStorage
+            localStorage.setItem('doctorViewPreference', 'grid');
+        });
+
+        listViewBtn.addEventListener('click', function() {
+            gridView.classList.add('d-none');
+            listView.classList.remove('d-none');
+            gridViewBtn.classList.remove('active');
+            listViewBtn.classList.add('active');
+
+            // Save preference to localStorage
+            localStorage.setItem('doctorViewPreference', 'list');
+        });
+
+        // Load saved view preference
+        const savedViewPreference = localStorage.getItem('doctorViewPreference');
+        if (savedViewPreference === 'list') {
+            listViewBtn.click();
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+
+                // Filter grid view cards
+                document.querySelectorAll('.doctor-card-wrapper').forEach(card => {
+                    const name = card.getAttribute('data-name');
+                    const specialty = card.getAttribute('data-specialty');
+                    const email = card.getAttribute('data-email');
+
+                    if (name.includes(searchTerm) || specialty.includes(searchTerm) || email.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Filter list view rows
+                document.querySelectorAll('.doctor-row').forEach(row => {
+                    const name = row.getAttribute('data-name');
+                    const specialty = row.getAttribute('data-specialty');
+                    const email = row.getAttribute('data-email');
+
+                    if (name.includes(searchTerm) || specialty.includes(searchTerm) || email.includes(searchTerm)) {
+                        row.style.display = 'table-row';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Add loading states to forms
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-1"></i> Processing...';
+                    submitBtn.disabled = true;
+                }
+            });
+        });
+
+        // Add smooth scroll for pagination
+        document.querySelectorAll('.pagination .page-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.page-body').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + F to focus search
+            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                e.preventDefault();
+                searchInput?.focus();
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Gradient Colors */
+    .text-gradient-primary {
+        background: linear-gradient(90deg, #2a7de1, #4b94e6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #2a7de1, #4b94e6);
+    }
+
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #28a745, #20c997);
+    }
+
+    .bg-gradient-danger {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+    }
+
+    .bg-gradient-light {
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    }
+
+    /* Doctor Cards */
+    .doctor-card {
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border: 1px solid rgba(0,0,0,0.05) !important;
+    }
+
+    .doctor-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .doctor-avatar {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    .doctor-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .status-indicator {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+    .bio-text {
+        max-height: 60px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.4;
+    }
+
+    .info-item {
+        padding: 8px 12px;
+        background: rgba(42, 125, 225, 0.05);
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    /* Action Buttons */
+    .btn-action {
+        border-radius: 12px;
+        padding: 8px 16px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        border-width: 2px;
+    }
+
+    .btn-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Stats Cards */
+    .stat-card {
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Modern Modal */
+    .modern-modal {
+        border-radius: 20px;
+        border: none;
+        overflow: hidden;
+    }
+
+    .modern-modal .modal-header {
+        border-radius: 20px 20px 0 0;
+        border-bottom: none;
+        padding: 1.5rem;
+    }
+
+    .modern-modal .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modern-modal .modal-footer {
+        border-top: none;
+        padding: 1.5rem;
+    }
+
+    /* Info Cards */
+    .info-card {
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    }
+
+    .info-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Modern Card */
+    .modern-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05) !important;
+    }
+
+    /* Table Styles */
+    .table th {
+        border-top: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        padding: 1.2rem 0.75rem;
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef) !important;
+    }
+
+    .table td {
+        padding: 1rem 0.75rem;
+        vertical-align: middle;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(42, 125, 225, 0.05);
+        transform: scale(1.01);
+        transition: all 0.3s ease;
+    }
+
+    /* Modern Toggle */
+    .modern-toggle {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .modern-toggle .btn {
+        border-radius: 0;
+        border: none;
+        padding: 12px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .modern-toggle .btn.active {
+        background: linear-gradient(135deg, #2a7de1, #4b94e6);
+        color: white;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Modern Pagination */
+    .modern-pagination {
+        gap: 8px;
+    }
+
+    .modern-pagination .page-item .page-link {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        color: #2a7de1;
+        padding: 12px 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+            .modern-pagination .page-item .page-link:hover {
+                background: linear-gradient(135deg, #2a7de1, #4b94e6);
+                border-color: #2a7de1;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(42, 125, 225, 0.3);
+            }
+
+        .modern-pagination .page-item.active .page-link {
+            background: linear-gradient(135deg, #2a7de1, #4b94e6);
+            border-color: #2a7de1;
+            color: white;
+            box-shadow: 0 4px 15px rgba(42, 125, 225, 0.4);
+        }
+
+        .modern-pagination .page-item.disabled .page-link {
+            background: #f8f9fa;
+            border-color: #dee2e6;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+    /* Text Colors for better visibility */
+    .text-dark {
+        color: #212529 !important;
+    }
+
+    /* Alert Enhancements */
+    .alert {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Input Group Styling */
+    .input-group {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+        .input-group .form-control {
+            border-radius: 0;
+            border-right: none;
+        }
+
+        .input-group .btn {
+            border-radius: 0;
+            border-left: none;
+        }
+
+    /* Animation for cards */
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .medicine-card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .action-buttons {
+            flex-direction: column;
+        }
+
+            .action-buttons .btn-action {
+                margin-bottom: 5px;
+            }
+
+        .modern-pagination {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+</style>
+
