@@ -3,56 +3,64 @@
   "WorkspaceRootPath": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\home\\getdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\home\\getdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\home\\getmedicines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\home\\getmedicines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\approveddoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\approveddoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\home\\getdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\home\\getdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\pendingdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\pendingdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\getallmedicines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\getallmedicines.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\wwwroot\\css\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:wwwroot\\css\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\admin\\pendingdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\admin\\pendingdoctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671706BA-155F-CF7C-5CE1-74430014B843}|ITI-Hackathon.csproj|d:\\working\\github\\back end\\iti_graduationprojectteam\\iticode\\views\\cart\\_cartdropdownpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -98,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,147 +146,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAMQBAAAAAAAAAAAkwNsBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-15T13:47:11.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAUwPQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T13:14:17.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAANcBAAAAAAAAAAAkwO4BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-15T13:03:38.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GetAllMedicines.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\GetAllMedicines.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\GetAllMedicines.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\GetAllMedicines.cshtml",
-              "RelativeToolTip": "Views\\Admin\\GetAllMedicines.cshtml",
-              "ViewState": "AgIAAMUBAAAAAAAAAAAAAP0CAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-10T22:18:41.501Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApprovedDoctors.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\ApprovedDoctors.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\ApprovedDoctors.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\ApprovedDoctors.cshtml",
-              "RelativeToolTip": "Views\\Admin\\ApprovedDoctors.cshtml",
-              "ViewState": "AgIAAGIBAAAAAAAAAAArwHUBAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-10T22:18:34.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetDoctors.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetDoctors.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\GetDoctors.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetDoctors.cshtml",
-              "RelativeToolTip": "Views\\Home\\GetDoctors.cshtml",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAUwBMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T16:45:45.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "styles.css",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\styles.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\styles.css",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\styles.css",
-              "RelativeToolTip": "wwwroot\\css\\styles.css",
-              "ViewState": "AgIAAHgCAAAAAAAAAAAAAIMCAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-11T14:26:57.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAALgAAAAAAAAAAAAowP8AAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-10T21:53:13.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PendingDoctors.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\PendingDoctors.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\PendingDoctors.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\PendingDoctors.cshtml",
-              "RelativeToolTip": "Views\\Admin\\PendingDoctors.cshtml",
-              "ViewState": "AgIAAB8CAAAAAAAAAAAcwCcCAAAlAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GetMedicines.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetMedicines.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\GetMedicines.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetMedicines.cshtml",
+              "RelativeToolTip": "Views\\Home\\GetMedicines.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T01:13:58.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAowHgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T01:28:41.104Z",
+              "WhenOpened": "2025-09-15T14:15:25.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_DashboardLayout.cshtml",
-              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_DashboardLayout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_DashboardLayout.cshtml",
-              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_DashboardLayout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_DashboardLayout.cshtml",
-              "ViewState": "AgIAAF8CAAAAAAAAAAAowGgCAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T01:14:07.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
@@ -291,19 +185,161 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
+              "Title": "GetAllMedicines.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\GetAllMedicines.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\GetAllMedicines.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\GetAllMedicines.cshtml",
+              "RelativeToolTip": "Views\\Admin\\GetAllMedicines.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T22:18:41.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAArwFkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T13:47:11.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApprovedDoctors.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\ApprovedDoctors.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\ApprovedDoctors.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\ApprovedDoctors.cshtml",
+              "RelativeToolTip": "Views\\Admin\\ApprovedDoctors.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T22:18:34.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetDoctors.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetDoctors.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\GetDoctors.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\GetDoctors.cshtml",
+              "RelativeToolTip": "Views\\Home\\GetDoctors.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwBYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T16:45:45.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "styles.css",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\styles.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\styles.css",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\styles.css",
+              "RelativeToolTip": "wwwroot\\css\\styles.css",
+              "ViewState": "AgIAAHIBAAAAAAAAAADwv3sBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-11T14:26:57.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAUwAkBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T01:14:03.212Z"
+              "WhenOpened": "2025-09-11T01:14:03.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwPQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T13:14:17.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PendingDoctors.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\PendingDoctors.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\PendingDoctors.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Admin\\PendingDoctors.cshtml",
+              "RelativeToolTip": "Views\\Admin\\PendingDoctors.cshtml",
+              "ViewState": "AgIAADkCAAAAAAAAAAAAAEUCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T01:13:58.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Admin.css",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\Admin.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Admin.css",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\css\\Admin.css",
+              "RelativeToolTip": "wwwroot\\css\\Admin.css",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAAwPoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-15T14:17:57.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_DashboardLayout.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_DashboardLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_DashboardLayout.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Shared\\_DashboardLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_DashboardLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T01:14:07.089Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAANcBAAAAAAAAAAAkwO4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T13:03:38.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T01:28:41.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "_CartDropdownPartial.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Cart\\_CartDropdownPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Cart\\_CartDropdownPartial.cshtml",
@@ -315,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "GetOrderDetails.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Order\\GetOrderDetails.cshtml",
               "RelativeDocumentMoniker": "Views\\Order\\GetOrderDetails.cshtml",
@@ -327,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "MyAppointments.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Appointment\\MyAppointments.cshtml",
               "RelativeDocumentMoniker": "Views\\Appointment\\MyAppointments.cshtml",
@@ -339,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "EditProfile.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Account\\EditProfile.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\EditProfile.cshtml",
@@ -351,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "DoctorDetails.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Home\\DoctorDetails.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\DoctorDetails.cshtml",
@@ -363,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "PatientAppointments.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Appointment\\PatientAppointments.cshtml",
               "RelativeDocumentMoniker": "Views\\Appointment\\PatientAppointments.cshtml",
@@ -375,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "AppointmentController.cs",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Controllers\\AppointmentController.cs",
               "RelativeDocumentMoniker": "Controllers\\AppointmentController.cs",
@@ -387,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
@@ -399,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "bootstrap.css",
               "DocumentMoniker": "D:\\Working\\GitHub\\BACK END\\ITI_GraduationProjectTeam\\ITICode\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
               "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

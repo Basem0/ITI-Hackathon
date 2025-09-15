@@ -1,12 +1,4 @@
-﻿@using ITI_Hackathon.Entities
-@using Microsoft.AspNetCore.Identity
-@inject UserManager<ApplicationUser> UserManager
-
-@{
-    var currentUser = await UserManager.GetUserAsync(User);
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -29,7 +21,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <!-- Brand -->
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index" >Mediux</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Mediux</a>
 
             <!-- Mobile Toggler aligned right -->
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -41,17 +33,17 @@
             <!-- Center Menu -->
             <div class="collapse navbar-collapse center-menu" id="navbarContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="GetMedicines">Medicines</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="GetDoctors" >Doctors</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About" >About</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="GetDoctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
                 </ul>
 
                 <!-- Mobile actions (replaces right icons on small screens) -->
                 <div class="d-lg-none mt-2 pt-2" style="border-top: 1px solid var(--light-border);">
                     <div class="menu-section-title">Quick actions</div>
-                    <a class="nav-link px-0" asp-controller="ChatPage" asp-action="Index" >
+                    <a class="nav-link px-0" asp-controller="ChatPage" asp-action="Index">
                         <i class="fa-solid fa-comments me-2 text-primary"></i>Chat
                     </a>
                     <a class="nav-link px-0" asp-controller="Cart" asp-action="Index">
@@ -65,10 +57,10 @@
 
             <!-- Right Menu - Fixed Dropdowns -->
             <div class="right-menu">
-                <ul>
+                <ul class="navbar-nav flex-row">
                     <!-- Chat -->
                     <li class="nav-item">
-                        <a class="nav-link nav-icon" asp-controller="ChatPage" asp-action="Index" >
+                        <a class="nav-link nav-icon" asp-controller="ChatPage" asp-action="Index">
                             <i class="fa-solid fa-comments"></i>
                         </a>
                     </li>
@@ -76,7 +68,7 @@
                     <!-- Cart Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-icon" href="#" id="cartDropdown"
-                           role="button" aria-expanded="false">
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-shopping-cart"></i>
                             <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge badge-custom">0</span>
                         </a>
@@ -89,33 +81,58 @@
 
                     <!-- Profile Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link nav-icon" href="#" id="profileDropdown">
+                        <a class="nav-link nav-icon" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
-                        <div class="dropdown-menu profile-dropdown">
-                            <div class="px-3 py-2 text-center mb-2">
-                                <div class="profile-icon mx-auto mb-2" style="width: 50px; height: 50px;">
-                                    <i class="fa-solid fa-user"></i>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a class="dropdown-item" href="/Account/Login">
+                                    <i class="fa-solid fa-sign-in-alt"></i> Login
+                                </a>
+                                <a class="dropdown-item" href="/Account/Register">
+                                    <i class="fa-solid fa-user-plus"></i> Register
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="px-3 py-2 text-center mb-2">
+                                    <div class="profile-icon mx-auto mb-2" style="width:50px;height:50px;">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <h6 class="mb-0">@User.Identity.Name</h6>
+                                    <small class="text-muted">@User.FindFirst("Email")?.Value</small>
                                 </div>
-                                <h6 class="mb-0">John Doe</h6>
-                                <small class="text-muted">john.doe@example.com</small>
-                            </div>
-                            <hr class="dropdown-divider">
-                            <a class="dropdown-item" href="#">
-                                <i class="fa-solid fa-user text-primary"></i> Profile
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fa-solid fa-gear text-secondary"></i> Settings
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fa-solid fa-question-circle text-info"></i> Help
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a class="dropdown-item text-danger" href="#">
-                                <i class="fa-solid fa-sign-out-alt"></i> Logout
-                            </a>
+                                <hr class="dropdown-divider">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="dropdown-item" href="/Admin/Dashboard">
+                                        <i class="fa-solid fa-tachometer-alt text-primary"></i> Dashboard
+                                    </a>
+                                }
+                                else if (User.IsInRole("Patient"))
+                                {
+                                    <a class="dropdown-item" href="/Appointments">
+                                        <i class="fa-solid fa-calendar-check text-primary"></i> Appointments
+                                    </a>
+                                    <a class="dropdown-item" href="/Orders">
+                                        <i class="fa-solid fa-box text-secondary"></i> Orders
+                                    </a>
+                                }
+                                else if (User.IsInRole("Doctor"))
+                                {
+                                    <a class="dropdown-item" href="/MyAppointments">
+                                        <i class="fa-solid fa-calendar-check text-primary"></i> MyAppointments
+                                    </a>
+                                }
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item text-danger" href="/Account/Logout">
+                                    <i class="fa-solid fa-sign-out-alt"></i> Logout
+                                </a>
+                            }
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -174,30 +191,61 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/script.js"></script>
     <script>
-        async function refreshCart() {
-            const countRes = await fetch('/Cart/GetCartCount');
-            const countData = await countRes.json();
-            document.getElementById('cart-count').innerText = countData.count;
+        // Initialize Bootstrap dropdowns
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all dropdowns
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+            var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl)
+            });
 
-            const dropdownRes = await fetch('/Cart/GetCartItemsDropdown');
-            const dropdownHtml = await dropdownRes.text();
-            document.getElementById('cart-items').innerHTML = dropdownHtml;
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (event) {
+                var isDropdown = event.target.matches('.dropdown-toggle') ||
+                                 event.target.closest('.dropdown-toggle') ||
+                                 event.target.matches('.dropdown-menu') ||
+                                 event.target.closest('.dropdown-menu');
+
+                if (!isDropdown) {
+                    dropdownList.forEach(function(dropdown) {
+                        dropdown.hide();
+                    });
+                }
+            });
+        });
+
+        async function refreshCart() {
+            try {
+                const countRes = await fetch('/Cart/GetCartCount');
+                const countData = await countRes.json();
+                document.getElementById('cart-count').innerText = countData.count;
+
+                const dropdownRes = await fetch('/Cart/GetCartItemsDropdown');
+                const dropdownHtml = await dropdownRes.text();
+                document.getElementById('cart-dropdown-items').innerHTML = dropdownHtml;
+            } catch (error) {
+                console.error('Error refreshing cart:', error);
+            }
         }
 
         async function addToCart(medicineId, quantity = 1) {
-            const res = await fetch('/Cart/Add', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ MedicineId: medicineId, Quantity: quantity })
-            });
+            try {
+                const res = await fetch('/Cart/Add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ MedicineId: medicineId, Quantity: quantity })
+                });
 
-            const data = await res.json();
-            if (data.success) {
-                await refreshCart();
-            } else {
-                alert("Failed to add to cart");
+                const data = await res.json();
+                if (data.success) {
+                    await refreshCart();
+                } else {
+                    alert("Failed to add to cart");
+                }
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+                alert("An error occurred while adding to cart");
             }
         }
 
@@ -212,23 +260,6 @@
 
             refreshCart();
         });
-                document.addEventListener("DOMContentLoaded", function () {
-            const cartDropdown = document.getElementById("cartDropdown");
-            const cartDropdownMenu = document.getElementById("cart-dropdown-menu");
-            const cartItemsContainer = document.getElementById("cart-dropdown-items");
-
-            cartDropdown.addEventListener("click", function () {
-                fetch("/Cart/GetCartItemsDropdown")
-                    .then(res => res.text())
-                    .then(html => {
-                        cartItemsContainer.innerHTML = html;
-                    })
-                    .catch(err => {
-                        cartItemsContainer.innerHTML = "<p class='text-danger px-3'>Error loading cart</p>";
-                    });
-            });
-        });
-
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
